@@ -1,5 +1,29 @@
 :root {
+}
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+body {
+  font-family: 'RalewayMedium';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f2f4f6;
+}
+
+@font-face {
+  font-family: RalewayBold;
+  font-weight: 900;
+  src: url('/public/assets/fonts/Raleway-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: RalewayMedium;
+  font-weight: 600;
+  src: url('/public/assets/fonts/Raleway-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: RalewayItalic;
+  font-weight: 600;
+  src: url('/public/assets/fonts/Raleway-Italic-VariableFont_wght.ttf');
 }
