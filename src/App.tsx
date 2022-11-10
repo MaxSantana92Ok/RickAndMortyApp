@@ -1,8 +1,15 @@
+import {useLayoutEffect} from 'react';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import {getCharacter_Service} from './services/services';
 
 function App() {
+  useLayoutEffect(() => {
+    getCharacter_Service();
+    return () => {};
+  }, []);
+
   return (
     <>
       <Typography variant="h3">Hellow World</Typography>
