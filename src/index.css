@@ -15,15 +15,15 @@ body {
 @font-face {
   font-family: RalewayBold;
   font-weight: 900;
-  src: url('/public/assets/fonts/Raleway-VariableFont_wght.ttf');
+  src: url('/assets/fonts/Raleway-VariableFont_wght.ttf');
 }
 @font-face {
   font-family: RalewayMedium;
   font-weight: 600;
-  src: url('/public/assets/fonts/Raleway-VariableFont_wght.ttf');
+  src: url('/assets/fonts/Raleway-VariableFont_wght.ttf');
 }
 @font-face {
   font-family: RalewayItalic;
   font-weight: 600;
-  src: url('/public/assets/fonts/Raleway-Italic-VariableFont_wght.ttf');
+  src: url('/assets/fonts/Raleway-Italic-VariableFont_wght.ttf');
 }
