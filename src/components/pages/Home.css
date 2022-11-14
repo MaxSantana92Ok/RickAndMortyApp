@@ -1,0 +1,13 @@
+.Box-Character-List {
+  display: flex;
+  max-height: calc(100vh - 80px);
+  overflow-y: scroll;
+  background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+}
+.Box-Pagination {
+  background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
