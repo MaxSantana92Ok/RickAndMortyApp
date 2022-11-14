@@ -1,5 +1,5 @@
 import {useReducer} from 'react';
-import {Page, Result} from '../interface/interface';
+import {Info, Result} from '../interface/interface';
 import {AppContext} from './AppContext';
 import {AppReducer, initialState} from './AppReducer';
 
@@ -10,18 +10,26 @@ interface appProps {
 export const AppProvider = ({children}: appProps) => {
   const [appStore, dispatch] = useReducer(AppReducer, initialState);
 
-  const setCharacterList = (id: Result) => {
-    dispatch({type: 'setCharacterList', payload: id});
+  const setCharacterList_Store = (list: Result[]) => {
+    dispatch({type: 'setCharacterList', payload: list});
   };
-  const setPageList = (id: Page) => {
+  const setPageList_Store = (id: Info) => {
     dispatch({type: 'setPageList', payload: id});
+  };
+  const setCharacter1_Store = (character: Result) => {
+    dispatch({type: 'setCharacter1', payload: character});
+  };
+  const setCharacter2_Store = (character: Result) => {
+    dispatch({type: 'setCharacter2', payload: character});
   };
   return (
     <AppContext.Provider
       value={{
         appStore,
-        setCharacterList,
-        setPageList,
+        setCharacterList_Store,
+        setPageList_Store,
+        setCharacter1_Store,
+        setCharacter2_Store,
       }}
     >
       {children}
