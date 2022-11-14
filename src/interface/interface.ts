@@ -2,10 +2,6 @@ export interface Request_props {
   n?: number;
 }
 
-export interface Page {
-  info: Info;
-}
-
 export interface Result {
   id: number;
   name: string;
@@ -35,4 +31,6 @@ export interface Info {
 export interface App_Store {
   list: Result[];
   page: Info;
+  character1: Result | null;
+  character2: Result | null;
 }
