@@ -27,3 +27,39 @@ body {
   font-weight: 600;
   src: url('/assets/fonts/Raleway-Italic-VariableFont_wght.ttf');
 }
+
+Body::-webkit-scrollbar {
+  width: 10px;
+}
+
+Body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+Body::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 66, 248);
+  outline: 1px solid rgb(8, 114, 220);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Box-Character-List::-webkit-scrollbar {
+  width: 10px;
+}
+
+.Box-Character-List::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.Box-Character-List::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
