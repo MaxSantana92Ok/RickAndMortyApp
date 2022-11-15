@@ -1,16 +1,21 @@
+import {useLayoutEffect, useState} from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import {Box, Button, CardMedia, Typography} from '@mui/material';
 import {Result} from '../../interface/interface';
 import {useContext} from 'react';
 import {AppContext} from '../../store/AppContext';
+import './CardItem.css';
 
 interface props {
   item: Result;
   type: string;
 }
 const CardItem = ({item, type}: props) => {
-  const {setCharacter1_Store, setCharacter2_Store} = useContext(AppContext);
+  const {appStore, setCharacter1_Store, setCharacter2_Store} = useContext(AppContext);
+  const {character1, character2} = appStore;
+  const [isSelected, setIsSelected] = useState(false);
+
   const handleClick = () => {
     if (type === 'one') {
       setCharacter1_Store(item);
@@ -19,9 +24,21 @@ const CardItem = ({item, type}: props) => {
       setCharacter2_Store(item);
     }
   };
+  useLayoutEffect(() => {
+    if (item.id === character1?.id || item.id === character2?.id) {
+      setIsSelected(true);
+    } else {
+      setIsSelected(false);
+    }
+  }, [item.id, character1?.id, character2?.id]);
+
   return (
     <Button fullWidth>
-      <Card sx={{display: 'flex', width: '100%'}} onClick={handleClick}>
+      <Card
+        sx={{display: 'flex', width: '100%'}}
+        onClick={handleClick}
+        className={isSelected ? 'Character-Selected' : 'Character-UnSelected'}
+      >
         <CardMedia
           component="img"
           sx={{width: 151}}
