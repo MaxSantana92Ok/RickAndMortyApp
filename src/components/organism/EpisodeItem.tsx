@@ -5,7 +5,7 @@ interface props {
 }
 const EpisodeItem = ({episode}: props) => {
   let {data, isValidating, error} = useSWR(`${episode}`);
-  console.log('EPISODE DATA:', data);
+  console.log(data);
   return (
     <Box display="flex" m={1}>
       <Typography variant="body1">{data.name}</Typography>
