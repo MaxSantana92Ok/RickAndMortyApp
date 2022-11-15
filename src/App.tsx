@@ -1,19 +1,11 @@
-import {Backdrop, CircularProgress} from '@mui/material';
 import {Suspense} from 'react';
+import Loading from './components/atoms/Loading';
 import Home from './components/pages/Home';
 
 function App() {
   return (
     <>
-      <Suspense
-        fallback={
-          <div>
-            <Backdrop sx={{color: '#fff', zIndex: theme => theme.zIndex.drawer + 1}} open={true}>
-              <CircularProgress color="inherit" />
-            </Backdrop>
-          </div>
-        }
-      >
+      <Suspense fallback={<Loading />}>
         <Home />
       </Suspense>
     </>

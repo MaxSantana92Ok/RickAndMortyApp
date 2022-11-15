@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from 'react';
+import {Suspense, useContext, useEffect, useState} from 'react';
 import {AppContext} from '../../store/AppContext';
 import useSWR from 'swr';
 import {Box} from '@mui/system';
@@ -8,6 +8,7 @@ import './Home.css';
 import Paging from '../organism/Paging';
 import {Typography} from '@mui/material';
 import EpisodeItem from '../organism/EpisodeItem';
+import Loading from '../atoms/Loading';
 
 interface Characters {
   first: Result[];
@@ -84,22 +85,24 @@ const Home = () => {
           <Paging getPage={handleGetPage} cant={page.pages} isDisabled={isValidating} />
         </Box>
         <Box className="Box-Episodes">
-          {character1 && (
-            <Box display="flex" flexDirection="column">
-              <Typography variant="h6">{character1.name}</Typography>
-              {character1.episode.map((epi, index) => {
-                return <EpisodeItem key={index} episode={epi} />;
-              })}
-            </Box>
-          )}
-          {character2 && (
-            <Box display="flex" flexDirection="column">
-              <Typography variant="h6">{character2.name}</Typography>
-              {character2.episode.map((epi, index) => {
-                return <EpisodeItem key={index} episode={epi} />;
-              })}
-            </Box>
-          )}
+          <Suspense fallback={<Loading />}>
+            {character1 && (
+              <Box display="flex" flexDirection="column">
+                <Typography variant="h6">{character1.name}</Typography>
+                {character1.episode.map((epi, index) => {
+                  return <EpisodeItem key={index} episode={epi} />;
+                })}
+              </Box>
+            )}
+            {character2 && (
+              <Box display="flex" flexDirection="column">
+                <Typography variant="h6">{character2.name}</Typography>
+                {character2.episode.map((epi, index) => {
+                  return <EpisodeItem key={index} episode={epi} />;
+                })}
+              </Box>
+            )}
+          </Suspense>
         </Box>
       </Box>
     );
