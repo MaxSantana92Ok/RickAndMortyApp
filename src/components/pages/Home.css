@@ -11,3 +11,9 @@
   align-items: center;
   height: 80px;
 }
+.Box-Episodes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
